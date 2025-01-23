@@ -19,6 +19,7 @@ import { Admin } from './components/Admin'
 import { AuthProvider } from './components/Auth'
 import { Profile } from './components/Profile'
 import { Login } from './components/Login'
+import { RequiredAuth } from './components/RequiredAuth'
 const LazyAbout = React.lazy(() => import('./components/About'))
 const apple = () =>{
   return(
@@ -37,7 +38,7 @@ const apple = () =>{
         <Route path='new' element = {<NewProducts/>}></Route>
         <Route path='featured' element = {<FeaturedProducts/>}></Route>
       </Route>
-      <Route path = "profile" element = {<Profile/>}></Route>
+      <Route path = "profile" element = {<RequiredAuth><Profile/></RequiredAuth>}></Route>
       <Route path = "login" element = {<Login/>}></Route>
       </Routes>
     </AuthProvider>
